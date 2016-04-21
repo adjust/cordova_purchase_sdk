@@ -7,15 +7,20 @@ function ADJPConfig(appToken, environment) {
     this.sdkPrefix = "cordova0.0.1";
 }
 
-ADJPConfig.EnvironmentSandbox     = "sandbox";
-ADJPConfig.EnvironmentProduction  = "production";
+ADJPConfig.EnvironmentSandbox               = "sandbox";
+ADJPConfig.EnvironmentProduction            = "production";
 
-ADJPConfig.LogLevelVerbose        = "VERBOSE",
-ADJPConfig.LogLevelDebug          = "DEBUG",
-ADJPConfig.LogLevelInfo           = "INFO",
-ADJPConfig.LogLevelWarn           = "WARN",
-ADJPConfig.LogLevelError          = "ERROR",
-ADJPConfig.LogLevelAssert         = "ASSERT",
+ADJPConfig.LogLevelVerbose                  = "VERBOSE",
+ADJPConfig.LogLevelDebug                    = "DEBUG",
+ADJPConfig.LogLevelInfo                     = "INFO",
+ADJPConfig.LogLevelWarn                     = "WARN",
+ADJPConfig.LogLevelError                    = "ERROR",
+ADJPConfig.LogLevelAssert                   = "ASSERT",
+
+ADJPConfig.ADJPVerificationStatePassed      = "ADJPVerificationStatePassed";
+ADJPConfig.ADJPVerificationStateFailed      = "ADJPVerificationStateFailed";
+ADJPConfig.ADJPVerificationStateUnknown     = "ADJPVerificationStateUnknown";
+ADJPConfig.ADJPVerificationStateNotVerified = "ADJPVerificationStateNotVerified";
 
 ADJPConfig.prototype.setLogLevel = function(logLevel) {
     this.logLevel = logLevel;
