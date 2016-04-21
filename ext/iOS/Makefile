@@ -6,9 +6,9 @@ default: copy
 
 build:	
 	cd $(SRCDIR); \
-	xcodebuild -target AdjustStatic -configuration Release
+	xcodebuild -target AdjustPurchaseStatic -configuration Release
 
 copy: build
-	rm -rf $(LIBOUTDIR)/AdjustSdk.framework; \
-	cp -R $(SRCDIR)/Frameworks/Static/AdjustSdk.framework $(LIBOUTDIR); \
-        sh $(SCRIPTDIR)/symlink_fix.sh
+	rm -rf $(LIBOUTDIR)/AdjustPurchaseSdk.framework; \
+	cp -R $(SRCDIR)/Frameworks/Static/AdjustPurchaseSdk.framework $(LIBOUTDIR); \
+	sh $(SCRIPTDIR)/symlink_fix.sh

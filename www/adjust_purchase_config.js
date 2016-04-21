@@ -1,0 +1,24 @@
+function ADJPConfig(appToken, environment) {
+    // iOS & Android
+    this.appToken = appToken;
+    this.environment = environment;
+
+    this.logLevel = null;
+    this.sdkPrefix = "cordova0.0.1";
+}
+
+ADJPConfig.EnvironmentSandbox     = "sandbox";
+ADJPConfig.EnvironmentProduction  = "production";
+
+ADJPConfig.LogLevelVerbose        = "VERBOSE",
+ADJPConfig.LogLevelDebug          = "DEBUG",
+ADJPConfig.LogLevelInfo           = "INFO",
+ADJPConfig.LogLevelWarn           = "WARN",
+ADJPConfig.LogLevelError          = "ERROR",
+ADJPConfig.LogLevelAssert         = "ASSERT",
+
+ADJPConfig.prototype.setLogLevel = function(logLevel) {
+    this.logLevel = logLevel;
+};
+
+module.exports = ADJPConfig;

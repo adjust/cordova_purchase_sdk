@@ -1,5 +1,5 @@
-MVNDIR = ./sdk/Adjust
-JARINDIR = ./sdk/Adjust/target
+MVNDIR = ./sdk/AdjustPurchase
+JARINDIR = ./sdk/AdjustPurchase/target
 JAROUTDIR = ../../src/Android/
 
 default: copy
@@ -11,8 +11,8 @@ clean:
 	cd $(MVNDIR); mvn clean
 
 copy: build
-	rm $(JAROUTDIR)/adjust-android*; \
-	cp $(JARINDIR)/adjust-android-*.*.*.jar $(JAROUTDIR); \
+	rm $(JAROUTDIR)/adjust-purchase-android*; \
+	cp $(JARINDIR)/adjust-purchase-android-*.*.*.jar $(JAROUTDIR); \
 	rm $(JAROUTDIR)/*-javadoc.jar; \
 	rm $(JAROUTDIR)/*-sources.jar; \
-	mv $(JAROUTDIR)/adjust-android-*.*.*.jar $(JAROUTDIR)/adjust-android.jar
+	mv $(JAROUTDIR)/adjust-purchase-android-*.*.*.jar $(JAROUTDIR)/adjust-purchase-android.jar
