@@ -3,8 +3,8 @@
 This is the Cordova purchase SDK of adjust™. You can read more about adjust™ at
 [adjust.com].
 
-N.B. At the moment, purchase SDK for Cordova supports Android platform version 
-`4.0.0 and higher` and iOS platform version `3.0.0 and higher`.
+N.B. At the moment, the adjust purchase SDK for Cordova supports Android platform 
+version  `4.0.0 and higher` and iOS platform version `3.0.0 and higher`.
 
 ## Basic Installation
 
@@ -27,7 +27,7 @@ Installing "com.adjust.sdk.purchase" for android
 Installing "com.adjust.sdk.purchase" for ios
 ```
 
-Alternatively, you can download our SDK directly as the plugin from `npm` 
+Alternatively, you can download our purchase SDK directly as the plugin from `npm` 
 [repository][npm-repo]. In order to do that, just execute this command in 
 your project folder:
 
@@ -43,7 +43,7 @@ Installing "com.adjust.sdk.purchase" for ios
 #### Basic setup
 
 In your `index.js` file after you have received `deviceready` event, add the 
-following code to initialize the adjust SDK:
+following code to initialize the adjust purchase SDK:
 
 ```javascript
 var adjustPurchaseConfig = new ADJPConfig("{YourAppToken}", ADJPConfig.EnvironmentSandbox);
@@ -226,10 +226,11 @@ AdjustPurchase.verifyPurchaseiOS("{Receipt}", "{TransactionId}", function(verifi
 });
 ```
 
-[adjust.com]:             http://adjust.com
-[fraud-prevention]:       https://docs.adjust.com/en/fraud-prevention/
-[dashboard]:              http://adjust.com
-[releases]:               https://github.com/adjust/cordova_purchase_sdk/releases
+[adjust.com]:       http://adjust.com
+[fraud-prevention]: https://docs.adjust.com/en/fraud-prevention/
+[dashboard]:        http://adjust.com
+[releases]:         https://github.com/adjust/cordova_purchase_sdk/releases
+[npm-repo]:         https://www.npmjs.com/package/com.adjust.sdk
 
 ## License
 
