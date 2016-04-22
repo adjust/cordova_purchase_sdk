@@ -1,28 +1,25 @@
 package com.adjust.sdk.purchase;
 
+import android.net.Uri;
+
+import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
-import android.net.Uri;
-import android.util.Log;
-
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
-import org.apache.cordova.PluginResult.Status;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONException;
+
+import org.apache.cordova.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.PluginResult.Status;
 
 public class AdjustPurchaseCordova extends CordovaPlugin implements OnADJPVerificationFinished {
     private static final String KEY_APP_TOKEN                       = "appToken";
     private static final String KEY_ENVIRONMENT                     = "environment";
     private static final String KEY_LOG_LEVEL                       = "logLevel";
     private static final String KEY_SDK_PREFIX                      = "sdkPrefix";
-    private static final String KEY_ITEM_SKU                        = "itemSku";
-    private static final String KEY_PURCHASE_TOKEN                  = "purchaseToken";
-    private static final String KEY_DEVELOPER_PAYLOAD               = "developerPayload";
 
     private static final String COMMAND_INIT                        = "init";
     private static final String COMMAND_VERIFY_PURCHASE_IOS         = "verifyPurchaseiOS";
