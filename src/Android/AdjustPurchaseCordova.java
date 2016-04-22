@@ -48,28 +48,30 @@ public class AdjustPurchaseCordova extends CordovaPlugin implements OnADJPVerifi
 
             ADJPConfig adjustConfig = new ADJPConfig(appToken, environment);
 
-            if (adjustConfig.isValid()) {
-                // Log level
-                if (isFieldValid(logLevel)) {
-                    if (logLevel.equals("VERBOSE")) {
-                        adjustConfig.setLogLevel(ADJPLogLevel.VERBOSE);
-                    } else if (logLevel.equals("DEBUG")) {
-                        adjustConfig.setLogLevel(ADJPLogLevel.DEBUG);
-                    } else if (logLevel.equals("INFO")) {
-                        adjustConfig.setLogLevel(ADJPLogLevel.INFO);
-                    } else if (logLevel.equals("WARN")) {
-                        adjustConfig.setLogLevel(ADJPLogLevel.WARN);
-                    } else if (logLevel.equals("ERROR")) {
-                        adjustConfig.setLogLevel(ADJPLogLevel.ERROR);
-                    } else if (logLevel.equals("ASSERT")) {
-                        adjustConfig.setLogLevel(ADJPLogLevel.ASSERT);
-                    } else {
-                        adjustConfig.setLogLevel(ADJPLogLevel.INFO);
-                    }
-                }
-
-                AdjustPurchase.init(adjustConfig);
+            if (adjustConfig == null) {
+                return true;
             }
+
+            // Log level
+            if (isFieldValid(logLevel)) {
+                if (logLevel.equals("VERBOSE")) {
+                    adjustConfig.setLogLevel(ADJPLogLevel.VERBOSE);
+                } else if (logLevel.equals("DEBUG")) {
+                    adjustConfig.setLogLevel(ADJPLogLevel.DEBUG);
+                } else if (logLevel.equals("INFO")) {
+                    adjustConfig.setLogLevel(ADJPLogLevel.INFO);
+                } else if (logLevel.equals("WARN")) {
+                    adjustConfig.setLogLevel(ADJPLogLevel.WARN);
+                } else if (logLevel.equals("ERROR")) {
+                    adjustConfig.setLogLevel(ADJPLogLevel.ERROR);
+                } else if (logLevel.equals("ASSERT")) {
+                    adjustConfig.setLogLevel(ADJPLogLevel.ASSERT);
+                } else {
+                    adjustConfig.setLogLevel(ADJPLogLevel.INFO);
+                }
+            }
+
+            AdjustPurchase.init(adjustConfig);
 
             return true;
         } else if (action.equals(COMMAND_SET_VERIFICATION_CALLBACK)) {
@@ -77,9 +79,6 @@ public class AdjustPurchaseCordova extends CordovaPlugin implements OnADJPVerifi
 
             return true;
         } else if (action.equals(COMMAND_VERIFY_PURCHASE_ANDROID)) {
-            // JSONObject jsonParameters = args.optJSONObject(0);
-            // Map<String, Object> parameters = jsonObjectToMap(jsonParameters);
-
             String itemSku = args.getString(0);
             String purchaseToken = args.getString(1);
             String developerPayload = args.getString(2);

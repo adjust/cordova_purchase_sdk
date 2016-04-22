@@ -37,7 +37,6 @@
 }
 
 - (void)init:(CDVInvokedUrlCommand *)command {
-    NSString *message;
     NSString *appToken = [[command.arguments objectAtIndex:0] objectForKey:KEY_APP_TOKEN];
     NSString *environment = [[command.arguments objectAtIndex:0] objectForKey:KEY_ENVIRONMENT];
     NSString *logLevel = [[command.arguments objectAtIndex:0] objectForKey:KEY_LOG_LEVEL];
@@ -45,33 +44,35 @@
 
     ADJPConfig *adjustConfig = [[ADJPConfig alloc] initWithAppToken:appToken andEnvironment:environment];
 
-    if ([adjustConfig isValid:message]) {
-        // Log level
-        if ([self isFieldValid:logLevel]) {
-            if ([logLevel caseInsensitiveCompare:@"VERBOSE"] == NSOrderedSame) {
-                [adjustConfig setLogLevel:ADJPLogLevelVerbose];
-            } else if ([logLevel caseInsensitiveCompare:@"DEBUG"] == NSOrderedSame) {
-                [adjustConfig setLogLevel:ADJPLogLevelDebug];
-            } else if ([logLevel caseInsensitiveCompare:@"INFO"] == NSOrderedSame) {
-                [adjustConfig setLogLevel:ADJPLogLevelInfo];
-            } else if ([logLevel caseInsensitiveCompare:@"WARN"] == NSOrderedSame) {
-                [adjustConfig setLogLevel:ADJPLogLevelWarn];
-            } else if ([logLevel caseInsensitiveCompare:@"ERROR"] == NSOrderedSame) {
-                [adjustConfig setLogLevel:ADJPLogLevelError];
-            } else if ([logLevel caseInsensitiveCompare:@"ASSERT"] == NSOrderedSame) {
-                [adjustConfig setLogLevel:ADJPLogLevelAssert];
-            } else {
-                [adjustConfig setLogLevel:ADJPLogLevelInfo];
-            }
-        }
-
-        // SDK prefix
-        if ([self isFieldValid:sdkPrefix]) {
-            [adjustConfig setSdkPrefix:sdkPrefix];
-        }
-
-        [AdjustPurchase init:adjustConfig];
+    if (adjustConfig == nil) {
+        return;
     }
+
+    // Log level
+    if ([self isFieldValid:logLevel]) {
+        if ([logLevel caseInsensitiveCompare:@"VERBOSE"] == NSOrderedSame) {
+            [adjustConfig setLogLevel:ADJPLogLevelVerbose];
+        } else if ([logLevel caseInsensitiveCompare:@"DEBUG"] == NSOrderedSame) {
+            [adjustConfig setLogLevel:ADJPLogLevelDebug];
+        } else if ([logLevel caseInsensitiveCompare:@"INFO"] == NSOrderedSame) {
+            [adjustConfig setLogLevel:ADJPLogLevelInfo];
+        } else if ([logLevel caseInsensitiveCompare:@"WARN"] == NSOrderedSame) {
+            [adjustConfig setLogLevel:ADJPLogLevelWarn];
+        } else if ([logLevel caseInsensitiveCompare:@"ERROR"] == NSOrderedSame) {
+            [adjustConfig setLogLevel:ADJPLogLevelError];
+        } else if ([logLevel caseInsensitiveCompare:@"ASSERT"] == NSOrderedSame) {
+            [adjustConfig setLogLevel:ADJPLogLevelAssert];
+        } else {
+            [adjustConfig setLogLevel:ADJPLogLevelInfo];
+        }
+    }
+
+    // SDK prefix
+    if ([self isFieldValid:sdkPrefix]) {
+        [adjustConfig setSdkPrefix:sdkPrefix];
+    }
+
+    [AdjustPurchase init:adjustConfig];
 }
 
 - (void)verifyPurchaseiOS:(CDVInvokedUrlCommand *)command {
