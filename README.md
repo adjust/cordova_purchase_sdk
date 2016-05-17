@@ -1,6 +1,6 @@
 ## Summary
 
-This is the Cordova purchase SDK of adjust™. You can read more about adjust™ at
+This is the Cordova Purchase SDK of adjust™. You can read more about adjust™ at
 [adjust.com].
 
 N.B. At the moment, the adjust purchase SDK for Cordova supports Android platform 
@@ -9,7 +9,7 @@ version  `4.0.0 and higher` and iOS platform version `3.0.0 and higher`.
 ## Basic Installation
 
 These are the minimal steps required to integrate the adjust purchase SDK into 
-your Cordova project. We are going to assume the command line interface is used.
+your Cordova project. We are going to assume you are using the command line interface.
 
 ### 1. Get the SDK
 
@@ -18,7 +18,7 @@ zip file in a folder of your choice.
 
 ### 2. Add the SDK to your project
 
-After you added iOS and/or Android as a platform for your project, enter the
+After you have added iOS and/or Android as a platform for your project, enter the
 following command in your project folder:
 
 ```
@@ -27,8 +27,8 @@ Installing "com.adjust.sdk.purchase" for android
 Installing "com.adjust.sdk.purchase" for ios
 ```
 
-Alternatively, you can download our purchase SDK directly as the plugin from `npm` 
-[repository][npm-repo]. In order to do that, just execute this command in 
+You can alternatively download our Purchase SDK directly as a plugin from the `npm` 
+[repository][npm-repo]. To do so, simply execute the following command in 
 your project folder:
 
 ```
@@ -42,8 +42,7 @@ Installing "com.adjust.sdk.purchase" for ios
 
 #### Basic setup
 
-In your `index.js` file after you have received `deviceready` event, add the 
-following code to initialize the adjust purchase SDK:
+Add the following code to initialize the adjust Purchase SDK in your `index.js` file, after you have received `deviceready` event:
 
 ```javascript
 var adjustPurchaseConfig = new ADJPConfig("{YourAppToken}", ADJPConfig.EnvironmentSandbox);
