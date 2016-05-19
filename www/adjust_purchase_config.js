@@ -4,7 +4,7 @@ function ADJPConfig(appToken, environment) {
     this.environment = environment;
 
     this.logLevel = null;
-    this.sdkPrefix = "cordova0.1.0";
+    this.sdkPrefix = "cordova0.1.1";
 }
 
 ADJPConfig.EnvironmentSandbox               = "sandbox";
