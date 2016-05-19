@@ -68,6 +68,11 @@ public class AdjustPurchaseCordova extends CordovaPlugin implements OnADJPVerifi
                 }
             }
 
+            // SDK prefix
+            if (isFieldValid(sdkPrefix)) {
+                adjustConfig.setSdkPrefix(sdkPrefix);
+            }
+
             AdjustPurchase.init(adjustConfig);
 
             return true;
