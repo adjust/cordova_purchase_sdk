@@ -1,4 +1,4 @@
-### Version 0.1.0 (18th May 2016)
+### Version 0.1.0 (19th May 2016)
 #### Added
 - Initial release of the adjust purchase SDK for Cordova.
 - Native iOS purchase SDK version is **0.2.1**.
