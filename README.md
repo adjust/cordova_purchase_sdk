@@ -121,9 +121,9 @@ AdjustPurchase.verifyPurchaseAndroid("{ItemSKU}", "{PurchaseToken}", "{Developer
 Method of the adjust purchase SDK used to make iOS verification request exects you to pass following parameters:
 
 ```
-Receipt         // App receipt of NSData type
-TransactionId   // Finished transaction object of SKPaymentTransaction type
-ProductId       // Your purchased product identifier of NSString type
+Receipt         // App receipt
+TransactionId   // Finished transaction identifier
+ProductId       // Your purchased product identifier
 Callback        // Callback method which will process the verification response
 ```
 
