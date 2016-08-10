@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.adjust.sdk.purchase"
-    version="0.1.1">
+    version="1.0.0">
 
     <name>AdjustPurchase</name>
     <description>Adjust purchase plugin for Cordova</description>
