@@ -33,12 +33,12 @@ var AdjustPurchase = {
         callCordova('verifyPurchaseAndroid', itemSku, purchaseToken, developerPayload);
     },
 
-    verifyPurchaseiOS: function (receipt, transactionId, verificationCallback) {
+    verifyPurchaseiOS: function (receipt, transactionId, productId, verificationCallback) {
         if (verificationCallback != null) {
             callCordovaCallback('setVerificationCallback', verificationCallback);
         }
 
-        callCordova('verifyPurchaseiOS', receipt, transactionId);
+        callCordova('verifyPurchaseiOS', receipt, transactionId, productId);
     }
 };
 

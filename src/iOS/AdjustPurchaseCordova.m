@@ -82,9 +82,11 @@
 
     NSString *receipt = [command argumentAtIndex:0 withDefault:nil];
     NSString *transactionId = [command argumentAtIndex:1 withDefault:nil];
+    NSString *productId = [command argumentAtIndex:2 withDefault:nil];
 
     [AdjustPurchase verifyPurchase:[receipt dataUsingEncoding:NSUTF8StringEncoding]
                   forTransactionId:transactionId
+                         productId:productId
                  withResponseBlock:^(ADJPVerificationInfo *info) {
                      [self adjustVerificationUpdate:info];
                  }];
